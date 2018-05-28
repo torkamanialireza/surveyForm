@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Result</title>
+    <style media="screen">
+      h2 {
+        margin-top:0px;
+        background-color: green;
+        color:white;
+        font-weight: bold;
+        font-size: 30px;
+        line-height: 100px;
+        height: 100px;
+        text-align: center;
+      }
+      fieldset {
+        width:60%;
+        margin:20px auto;
+      }
+      .green {
+        font-weight: bold;
+        color:green;
+        text-align: left;
+        float: left;
+        margin-left: 20%;
+
+      }
+      p {
+        width:80% !important;
+        float: left;
+
+      }
+      label {
+        width:30% !important;
+        float: left;
+        text-align: right;
+
+      }
+    </style>
+  </head>
+  <body>
+
+    {% load static %}
+    <h2>You Submitted this Form {{ request.session.counter }}  times.</h2>
+
+    <fieldset>
+      <h1>Submitted Information:</h1>
+    <p>
+      <label>Your Name :</label><a class="green">{{request.session.your_name}}</a>
+    </p>
+    <p>
+      <label>Dojo Location :</label><a class="green">{{request.session.location}}</a>
+    </p>
+    <p>
+      <label>Favorite Language :</label><a class="green">{{request.session.language}}</a>
+    </p>
+    <p>
+      <label>Your comment : </label><a class="green">{{request.session.comment}}</a>
+    </p>
+    </fieldset>
+
+
+
+
+  </body>
+</html>

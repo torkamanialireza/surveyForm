@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Survey Form</title>
+  </head>
+  <body>
+    <h1>Survey Form</h1>
+    {% load static %}
+    <fieldset>
+      <form action="/process" method="post">
+        {% csrf_token %}
+        <p>
+          Your Name : <input type="text" name="your_name" />
+        </p>
+        <p>
+          Dojo Location:
+          <select name="location">
+            <option value="Burbank">Burbank</option>
+            <option value="New York">New York</option>
+            <option value="San Fransisco">San Fransisco</option>
+            <option value="Mountain View">Mountain View</option>
+          </select>
+        </p>
+        <p>
+          Favorite Language:
+          <select name="language">
+            <option value="Python">Python</option>
+            <option value="Java Script">Java Script</option>
+            <option value="C#">C#</option>
+            <option value="PHP">PHP</option>
+          </select>
+        </p>
+        <p>
+          Comment(optional) :
+        </p>
+        <p>
+          <textarea name="comment" rows="8" cols="80"></textarea>
+        </p>
+        <input type="submit" name="Submit">
+          <a href="/reset">Reset</a>
+      </form>
+    </fieldset>
+  </body>
+</html>
